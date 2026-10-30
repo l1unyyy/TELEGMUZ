@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101010">
+  <title>TELEGMUZZ</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand-mark">♫</div>
+      <div class="brand-copy">
+        <div class="brand-name">TELEG<span>MUZZ</span></div>
+        <div class="brand-subtitle">ТВОЯ МУЗЫКА</div>
+      </div>
+      <button class="avatar" id="profileButton" aria-label="Профиль">♪</button>
+    </header>
+
+    <main>
+      <section class="greeting">
+        <p class="eyebrow">ТВОЯ МУЗЫКА — ВСЕГДА РЯДОМ</p>
+        <h1>Что будем<br><span>слушать?</span></h1>
+      </section>
+
+      <form class="search" id="searchForm">
+        <span class="search-icon">⌕</span>
+        <input id="searchInput" type="search" placeholder="Трек, исполнитель или альбом" autocomplete="off">
+        <button type="submit" aria-label="Искать">Найти</button>
+      </form>
+
+      <section class="section" id="resultsSection">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">ПОИСК</p>
+            <h2 id="resultsTitle">Популярное</h2>
+          </div>
+          <span class="section-note" id="resultCount">Подборка</span>
+        </div>
+        <div class="track-list" id="trackList"></div>
+        <p class="empty-state hidden" id="emptyState">Ничего не найдено. Попробуй другой запрос.</p>
+        <p class="status-line" id="statusLine">Демо-режим: подключи API бота, чтобы искать настоящие треки.</p>
+      </section>
+
+      <section class="section favorites-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">ТВОЯ КОЛЛЕКЦИЯ</p>
+            <h2>Избранное</h2>
+          </div>
+          <span class="section-note" id="favoritesCount">0 треков</span>
+        </div>
+        <div class="track-list" id="favoritesList"></div>
+        <p class="empty-state" id="favoritesEmpty">Сохраняй понравившиеся треки сердечком.</p>
+      </section>
+    </main>
+
+    <section class="player" id="player">
+      <div class="player-art" id="playerArt">♫</div>
+      <div class="player-meta">
+        <strong id="playerTitle">Ничего не играет</strong>
+        <span id="playerArtist">Выбери трек из списка</span>
+      </div>
+      <button class="play-button" id="playButton" aria-label="Воспроизвести">▶</button>
+    </section>
+
+    <nav class="bottom-nav">
+      <button class="nav-item active" data-target="resultsSection"><span>⌕</span>Поиск</button>
+      <button class="nav-item" data-target="favoritesList"><span>♡</span>Избранное</button>
+    </nav>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
